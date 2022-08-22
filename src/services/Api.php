@@ -38,6 +38,9 @@ class Api extends Component
         if (TaxJar::getInstance()->getSettings()->useSandbox) {
             $this->_client->setApiConfig('api_url', Client::SANDBOX_API_URL);
         }
+        $this->_client->setApiConfig('headers', [
+            'x-api-version' => '2022-01-24'
+        ]);
     }
 
     /**
